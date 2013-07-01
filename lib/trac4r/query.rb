@@ -45,6 +45,8 @@ module Trac
                                        use_ssl,
                                        nil)
       @connection.instance_variable_get(:@http).instance_variable_set(:@verify_mode, OpenSSL::SSL::VERIFY_NONE)
+      puts @connection
+      
     end
     
     def query command, *args
