@@ -69,10 +69,7 @@ module Trac
       if @url.split('/').last != 'xmlrpc'
         @url = url+'/xmlrpc'
       end
-      @connection = Query.new(@url,@user,@pass)
-      @connection.instance_variable_get(:@http).instance_variable_set(:@verify_mode, OpenSSL::SSL::VERIFY_NONE)
-      puts @connection
-      
+      @connection = Query.new(@url,@user,@pass)      
       @wiki = Wiki.new(@connection)
       @tickets = Tickets.new(@connection)
     end
