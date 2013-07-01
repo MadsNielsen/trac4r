@@ -35,6 +35,10 @@ module Trac
       @host = uri.host
       @path = uri.path
       @port = uri.port
+      
+      puts "Host: #{@host}"
+      puts "Path: #{@path}" 
+      
       @connection = XMLRPC::Client.new(@host,
                                        @path,
                                        @port,
